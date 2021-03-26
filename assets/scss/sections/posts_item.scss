@@ -1,9 +1,0 @@
-.posts-item  {
-    background-color: $color-gray-light;
-    min-height: 100px;
-    @for $i from 1 through 6 {
-        .skill-item:nth-of-type(#{$i}) {
-          grid-area: a#{$i};
-        }
-      }
-}
