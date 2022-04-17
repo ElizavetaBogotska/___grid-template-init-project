@@ -1,29 +1,65 @@
 .about {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    @include lg-min {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      @include lg-md {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+      @include md {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
     background-color: $color-gray-light;
     letter-spacing: 0.055em;
     
     &__container {
         display: grid;
-        grid-gap: 100px;
         @extend %container;
+    @include lg-min {
+        grid-gap: 100px;
         grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+        grid-gap: 40px;
+        grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+        grid-gap: 20px;
+        grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+    }
     }
 
     &__content {
         h2 {
-            margin-top: 0;
-            letter-spacing: 0.1em;
-            font-family: $font-header;
-            color: $color-primary;
-            line-height: 1.2em;
-            margin-bottom: 56px;
-            font-size: 2.5rem;
+            @include lg-min {
+                margin-bottom: 3rem;
+                font-size: 2.5rem;
+            }
+            @include lg-md {
+                margin-bottom: 2.625rem;
+                font-size: 2rem;
+            }
+            @include md-sm {
+                margin-bottom: 2.25rem;
+                font-size: 1.5rem;
+            }
+            @include sm {
+                margin-bottom: 2.25rem;
+                text-align: center;
+                font-size: 1.5rem;
+            }
         }
         p {
             color: $color-gray;
+            @include lg-min {
             font-size: 1.125rem;
+            }
         }
         p:first-of-type {
             position: relative;
@@ -32,15 +68,21 @@
         p:first-of-type::after {
             position: absolute;
             top: 0;
-            right: -50px;
             width: 2px;
             height: 200px;
             content: "";
-            background-color: rgb(219, 213, 213);
+            background-color: rgba(99, 117, 136, 0.1);
         }
 
     }
     &__image {
         display: grid;
+        align-content: center;
+        justify-items: center;
+    
+    img {
+        max-width: 100%;
+        max-height: 480px;
     }
+}
 }
