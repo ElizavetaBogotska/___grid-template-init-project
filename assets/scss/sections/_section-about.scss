@@ -72,6 +72,18 @@
             height: 200px;
             content: "";
             background-color: rgba(99, 117, 136, 0.1);
+            @include lg-min {
+                right: -50px;
+            }
+            @include lg-md {
+                right: -20px;
+            }
+            @include md-sm {
+                right: -10px;
+            }
+            @include sm {
+                display: none;
+            }
         }
 
     }
